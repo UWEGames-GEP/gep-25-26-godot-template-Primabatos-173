@@ -1,10 +1,15 @@
 extends Node3D
-class_name InteractableItem 
+class_name item
 
-@export var ItemHighlightMesh : MeshInstance3D
+func _process(delta: float) -> void:
+	pass
 
-func GainFocus():
-	ItemHighlightMesh.visible = true
 
-func LoseFocus():
-	ItemHighlightMesh.visible = false
+
+
+
+
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	print("touch")

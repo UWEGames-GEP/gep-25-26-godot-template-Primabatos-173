@@ -1,13 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0v6qkwen2h8d"]
+[gd_scene load_steps=5 format=3 uid="uid://c0v6qkwen2h8d"]
+
+[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://scripts/item.gd" id="1_2q51k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q51k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
 [node name="BoxItem" type="Node3D"]
+script = ExtResource("1_2q51k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2q51k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_2q51k")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1.07379, 0, 0, 0, 1.07379, 0, 0, 0, 1.07379, 0, 0, 0)
 shape = SubResource("BoxShape3D_8vc27")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-use_collision = true
+[connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
