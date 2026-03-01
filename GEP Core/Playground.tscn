@@ -126,3 +126,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8399)
 
 [node name="BoxItem" parent="Items" instance=ExtResource("10_dtxi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94463, 0.902657, -18.6846)
+ItemName = "box"
+
+[node name="BoxItem2" parent="Items" instance=ExtResource("10_dtxi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69488, 0.935489, -16.4621)
+ItemName = "box 2"

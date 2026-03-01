@@ -1,7 +1,7 @@
-extends Control
+extends Resource
 class_name Inventory
 
-@export var items = []
+@export var items: Array[Item]
 
 func _ready() -> void:
 	pass
@@ -14,13 +14,24 @@ func _process(delta: float) -> void:
 		Removeitem("item added")
 		print(items)
 	
-
+func _on_area_3d_area_entered(body: Node3D) -> void:
+	if body.is_in_group("Item"):
+		
+		Additem("item")
+		
+		print(items)
+		body.get_parent_node_3d().queue_free()
+		
+	
+	
+	
 	
 	
 	
 	
 
 func Additem(itemName):
+	
 	items.append(itemName)
 
 func Removeitem(itemName):
