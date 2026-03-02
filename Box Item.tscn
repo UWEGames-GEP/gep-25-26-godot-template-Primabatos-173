@@ -1,23 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0v6qkwen2h8d"]
+[gd_scene load_steps=5 format=3 uid="uid://c0v6qkwen2h8d"]
 
-[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://Inventory stuff/item.gd" id="1_2q51k"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
+[ext_resource type="Script" uid="uid://bh5k8goyqmypo" path="res://resource holder.gd" id="1_qqhg6"]
+[ext_resource type="Resource" uid="uid://dje8phy1pjqyx" path="res://Inventory stuff/item_resource.tres" id="2_tedqd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
+
 [node name="BoxItem" type="Node3D" groups=["Item"]]
-script = ExtResource("1_2q51k")
+script = ExtResource("1_qqhg6")
+item = ExtResource("2_tedqd")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Item"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.07379, 0, 0, 0, 1.07379, 0, 0, 0, 1.07379, 0, 0, 0)
+shape = SubResource("BoxShape3D_8vc27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_2q51k")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D" groups=["Item"]]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
-transform = Transform3D(1.07379, 0, 0, 0, 1.07379, 0, 0, 0, 1.07379, 0, 0, 0)
-shape = SubResource("BoxShape3D_8vc27")
-
-[connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

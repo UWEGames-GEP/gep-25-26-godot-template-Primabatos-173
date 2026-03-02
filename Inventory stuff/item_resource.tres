@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_6tktf")
-ItemName = "box"
+ItemName = "cube"
 metadata/_custom_type_script = "uid://pwrcs7d0vcor"

@@ -16,7 +16,7 @@ extends CharacterBody3D
 @export var run_speed = 5.5
 @export var dash_power = 12 # Controls roll and big attack speed boosts
 
-@export var inv: Inventory
+
 
 # Animation node names
 var roll_node_name = "Roll"
