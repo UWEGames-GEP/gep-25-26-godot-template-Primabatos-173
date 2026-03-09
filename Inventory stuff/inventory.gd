@@ -7,11 +7,12 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("open inventory"):
-		Additem("item added")
-		print(items)
+	
+	#if Input.is_action_just_pressed("open inventory"):
+		#Additem("item added")
+		#print(items)
 	if Input.is_action_just_pressed("Remove item"):
-		Removeitem("item added")
+		items.erase("cube")
 		print(items)
 
 	
@@ -30,6 +31,6 @@ func Additem(itemName):
 	
 	items.append(itemName)
 	
-
+#Z key
 func Removeitem(itemName):
 	items.erase(itemName)

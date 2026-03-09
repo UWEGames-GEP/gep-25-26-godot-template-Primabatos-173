@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0v6qkwen2h8d"]
+[gd_scene load_steps=5 format=3 uid="uid://csacwpovscutd"]
 
-[ext_resource type="Script" uid="uid://bh5k8goyqmypo" path="res://resource holder.gd" id="1_qqhg6"]
-[ext_resource type="Resource" uid="uid://dje8phy1pjqyx" path="res://Inventory stuff/item_resource.tres" id="2_tedqd"]
+[ext_resource type="Script" uid="uid://bh5k8goyqmypo" path="res://scripts/resource holder.gd" id="1_uer3r"]
+[ext_resource type="Resource" uid="uid://doswt550nk0i6" path="res://Inventory stuff/resources/ball_resource.tres" id="2_uer3r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
+[sub_resource type="SphereMesh" id="SphereMesh_uer3r"]
 
-[node name="BoxItem" type="Node3D" groups=["Item"]]
-script = ExtResource("1_qqhg6")
-item = ExtResource("2_tedqd")
+[node name="BallItem" type="Node3D" groups=["Item"]]
+script = ExtResource("1_uer3r")
+item = ExtResource("2_uer3r")
 
 [node name="Area3D" type="Area3D" parent="." groups=["Item"]]
 collision_layer = 4
@@ -20,6 +20,6 @@ transform = Transform3D(1.07379, 0, 0, 0, 1.07379, 0, 0, 0, 1.07379, 0, 0, 0)
 shape = SubResource("BoxShape3D_8vc27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_2q51k")
+mesh = SubResource("SphereMesh_uer3r")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
