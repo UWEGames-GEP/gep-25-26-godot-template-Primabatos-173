@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0v6qkwen2h8d"]
+[gd_scene load_steps=4 format=3 uid="uid://c0v6qkwen2h8d"]
 
-[ext_resource type="Script" uid="uid://bh5k8goyqmypo" path="res://scripts/resource holder.gd" id="1_qqhg6"]
-[ext_resource type="Resource" uid="uid://dje8phy1pjqyx" path="res://Inventory stuff/resources/item_resource.tres" id="2_tedqd"]
+[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://Inventory stuff/item.gd" id="1_dtbxf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
 
 [node name="BoxItem" type="Node3D" groups=["Item"]]
-script = ExtResource("1_qqhg6")
-item = ExtResource("2_tedqd")
+script = ExtResource("1_dtbxf")
 
 [node name="Area3D" type="Area3D" parent="." groups=["Item"]]
 collision_layer = 4

@@ -15,6 +15,10 @@ run/main_scene="uid://ngecyo0pmaed"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Inventory stuff/Global.gd"
+
 [dotnet]
 
 project/assembly_name="Gd Quest-3 Rd-person-character-demo"

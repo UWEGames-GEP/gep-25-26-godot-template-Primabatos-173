@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csacwpovscutd"]
-
-[ext_resource type="Script" uid="uid://bh5k8goyqmypo" path="res://scripts/resource holder.gd" id="1_uer3r"]
-[ext_resource type="Resource" uid="uid://doswt550nk0i6" path="res://Inventory stuff/resources/ball_resource.tres" id="2_uer3r"]
+[gd_scene load_steps=3 format=3 uid="uid://csacwpovscutd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_uer3r"]
 
 [node name="BallItem" type="Node3D" groups=["Item"]]
-script = ExtResource("1_uer3r")
-item = ExtResource("2_uer3r")
 
 [node name="Area3D" type="Area3D" parent="." groups=["Item"]]
 collision_layer = 4
