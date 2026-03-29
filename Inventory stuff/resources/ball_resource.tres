@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("1_ip1in")
-ItemName = "ball"
 metadata/_custom_type_script = "uid://pwrcs7d0vcor"

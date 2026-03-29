@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://kagfjuuxx6b8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pmrp"]
+bg_color = Color(0.486275, 0.486275, 0.486275, 0.454902)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Item Slot" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = -1
+anchor_right = -0.123264
+anchor_bottom = -0.220679
+offset_right = 242.0
+offset_bottom = 239.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3pmrp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 96.0
+expand_mode = 1

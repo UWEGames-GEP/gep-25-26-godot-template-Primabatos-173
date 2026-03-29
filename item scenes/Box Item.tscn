@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0v6qkwen2h8d"]
-
-[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://Inventory stuff/item.gd" id="1_dtbxf"]
+[gd_scene load_steps=3 format=3 uid="uid://c0v6qkwen2h8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vc27"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2q51k"]
 
 [node name="BoxItem" type="Node3D" groups=["Item"]]
-script = ExtResource("1_dtbxf")
 
 [node name="Area3D" type="Area3D" parent="." groups=["Item"]]
 collision_layer = 4
@@ -19,5 +16,3 @@ shape = SubResource("BoxShape3D_8vc27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_2q51k")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

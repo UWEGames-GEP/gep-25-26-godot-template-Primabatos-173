@@ -1,8 +1,14 @@
 extends Area3D
-
-@export var ItemTypes : Array[Item] = []
+signal OnItemPickedUp(item)
+@export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
+
+func _input(event: InputEvent)-> void:
+	#if(event.is_action_pressed("collect item")):
+	#	pickup()
+	pass
+
 
 func pickup():
 	var nearestItem : InteractableItem = null
@@ -18,16 +24,15 @@ func pickup():
 		var itemPrefab = nearestItem.scene_file_path
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
-				print("Item id:" + str(i) + "Item Name:" + ItemTypes[i].ItemName)
+				print(ItemTypes[i].ItemName)
+				OnItemPickedUp.emit(ItemTypes[i])
 				return
 			
 		print("Item not found")
 		
 
 func OnObjectEnteredArea(body: Node3D):
-	pickup()
-
-func OnObjectExitedArea(body: Node3D):
-	if(body is InteractableItem and NearbyBodies.has(body)):
-		body.LoseFocus()
-		NearbyBodies.remove_at(NearbyBodies.find(body))
+	if (body is InteractableItem):
+		print ("there")
+		NearbyBodies.append(body)
+		pickup()

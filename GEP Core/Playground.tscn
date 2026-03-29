@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=13 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="1_rfwro"]
 [ext_resource type="PackedScene" uid="uid://d2nc1e28p1tlu" path="res://pause.tscn" id="1_wyl2q"]
@@ -9,9 +9,7 @@
 [ext_resource type="Material" uid="uid://cpk3jtowelhgh" path="res://addons/ThirdPersonTemplate/Environments/Materials/PingkGrid.material" id="6_vn1us"]
 [ext_resource type="Material" uid="uid://bquocw2a8n271" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreyGrid.material" id="7_x40f1"]
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
-[ext_resource type="PackedScene" uid="uid://c0v6qkwen2h8d" path="res://item scenes/Box Item.tscn" id="10_dtxi8"]
-[ext_resource type="PackedScene" uid="uid://csacwpovscutd" path="res://item scenes/Ball Item.tscn" id="11_iywyu"]
-[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://Inventory stuff/item.gd" id="11_vn1us"]
+[ext_resource type="PackedScene" uid="uid://c66638yeyby1" path="res://item scenes/temp_box.tscn" id="11_iywyu"]
 [ext_resource type="PackedScene" uid="uid://mxrn1j0aphfv" path="res://Inventory stuff/inventory_ui.tscn" id="12_sc53d"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
@@ -123,17 +121,9 @@ size = Vector3(22, 10, 14)
 material = ExtResource("7_x40f1")
 
 [node name="PlayerTemplate" parent="." instance=ExtResource("8_0iswe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8399)
-
-[node name="Items" type="Node3D" parent="."]
-
-[node name="BoxItem" parent="Items" instance=ExtResource("10_dtxi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94463, 0.902657, -18.6846)
-ItemName = "Box"
-
-[node name="BoxItem2" parent="Items" instance=ExtResource("11_iywyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653999, -17.6022)
-script = ExtResource("11_vn1us")
-ItemName = "Ball"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968415, -0.114205, -20.1353)
 
 [node name="Inventory UI" parent="." instance=ExtResource("12_sc53d")]
+
+[node name="temp box" parent="." instance=ExtResource("11_iywyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23858, 1.08025, -16.5971)

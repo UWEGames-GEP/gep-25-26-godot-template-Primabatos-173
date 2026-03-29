@@ -3,8 +3,8 @@ class_name InteractableItem
 
 @export var ItemHighlight : MeshInstance3D
 
-func GainFocus():
-	ItemHighlight.visible = true
+#func GainFocus():
+	#ItemHighlight.visible = true
 
-func LoseFocus():
-	ItemHighlight.vivible = false
+#func LoseFocus():
+	#wItemHighlight.vivible = false

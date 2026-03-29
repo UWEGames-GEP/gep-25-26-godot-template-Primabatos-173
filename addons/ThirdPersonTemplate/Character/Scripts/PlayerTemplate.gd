@@ -46,7 +46,7 @@ var angular_acceleration = int()
 var acceleration = int()
 
 func _ready(): # Camera based Rotation
-	Global.set_player_reference(self)
+	
 	direction = Vector3.BACK.rotated(Vector3.UP, $Camroot/h.global_transform.basis.get_euler().y)
 
 func _input(event): # All major mouse and button input events
