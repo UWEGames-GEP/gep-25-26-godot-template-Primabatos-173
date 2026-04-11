@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+#@export var inventoryData: Inventory
 # Grabs the prebuilt AnimationTree 
 @onready var PlayerAnimationTree = $AnimationTree.get_path()
 @onready var animation_tree = get_node(PlayerAnimationTree)

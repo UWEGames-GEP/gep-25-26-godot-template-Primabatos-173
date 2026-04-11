@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2rrt5f0gw1qg"]
+
+[ext_resource type="Script" uid="uid://b04osr2j3eo1j" path="res://Inventory stuff/scripts/InteractableItem.gd" id="1_y78vh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_y78vh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iywyu"]
+
+[node name="Ball" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_y78vh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_y78vh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_iywyu")

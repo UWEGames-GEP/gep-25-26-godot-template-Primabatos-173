@@ -1,5 +1,7 @@
 extends Area3D
 signal OnItemPickedUp(item)
+signal OnItemDrop(item)
+
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
@@ -9,30 +11,25 @@ func _input(event: InputEvent)-> void:
 	#	pickup()
 	pass
 
-
+#when item enters player vacinity, the item will be deleted and emit a signal
 func pickup():
-	var nearestItem : InteractableItem = null
-	var nearestItemDistance : float = INF
+	var detectedItem : InteractableItem = null
 	for item in NearbyBodies:
-		if (item.global_position.distance_to(global_position) < nearestItemDistance):
-			nearestItemDistance = item.global_position.distance_to(global_position)
-			nearestItem = item
+		detectedItem = item
 	
-	if (nearestItem != null):
-		nearestItem.queue_free()
-		NearbyBodies.remove_at(NearbyBodies.find(nearestItem))
-		var itemPrefab = nearestItem.scene_file_path
+	if (detectedItem != null):
+		detectedItem.queue_free()
+		var itemPrefab = detectedItem.scene_file_path
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print(ItemTypes[i].ItemName)
 				OnItemPickedUp.emit(ItemTypes[i])
 				return
-			
-		print("Item not found")
+
+
 		
 
 func OnObjectEnteredArea(body: Node3D):
 	if (body is InteractableItem):
-		print ("there")
 		NearbyBodies.append(body)
 		pickup()

@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://bquocw2a8n271" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreyGrid.material" id="7_x40f1"]
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="PackedScene" uid="uid://c66638yeyby1" path="res://item scenes/temp_box.tscn" id="11_iywyu"]
-[ext_resource type="PackedScene" uid="uid://mxrn1j0aphfv" path="res://Inventory stuff/inventory_ui.tscn" id="12_sc53d"]
+[ext_resource type="PackedScene" uid="uid://b2rrt5f0gw1qg" path="res://item scenes/Ball.tscn" id="11_sc53d"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -123,7 +123,11 @@ material = ExtResource("7_x40f1")
 [node name="PlayerTemplate" parent="." instance=ExtResource("8_0iswe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968415, -0.114205, -20.1353)
 
-[node name="Inventory UI" parent="." instance=ExtResource("12_sc53d")]
+[node name="temp box2" parent="." instance=ExtResource("11_iywyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09997, 0.817441, -15.3867)
 
 [node name="temp box" parent="." instance=ExtResource("11_iywyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23858, 1.08025, -16.5971)
+
+[node name="Ball" parent="." instance=ExtResource("11_sc53d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3583, 0.69482, -16.558)

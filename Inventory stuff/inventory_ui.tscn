@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://mxrn1j0aphfv"]
 
-[ext_resource type="Script" uid="uid://bptltbn1v30xw" path="res://Inventory stuff/inventory_ui.gd" id="1_c6sat"]
+[ext_resource type="Script" uid="uid://bptltbn1v30xw" path="res://Inventory stuff/scripts/inventory_handler.gd" id="1_c6sat"]
 
-[node name="Inventory UI" type="Control"]
+[node name="Inventory UI" type="Control" node_paths=PackedStringArray("grid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,12 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c6sat")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 647.0
-color = Color(0.65098, 1, 1, 0.466667)
+CollisionMask = 1
+grid = NodePath("Panel/MarginContainer/GridContainer")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
