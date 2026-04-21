@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dje8phy1pjqyx"]
-
-[ext_resource type="Script" uid="uid://pwrcs7d0vcor" path="res://Inventory stuff/scripts/item.gd" id="1_6tktf"]
-
-[resource]
-script = ExtResource("1_6tktf")
-ItemName = "cube"
-metadata/_custom_type_script = "uid://pwrcs7d0vcor"

@@ -27,16 +27,13 @@ func removeItem(data : ItemData):
 		iconSlot.texture = null
 		return slotFilled
 
-#func getSlotData():
-	#if (slotFilled):
-		#return {"Type": "Item", "ID": slotID}
+
 func _get_drag_data(at_position: Vector2)->Variant:
 	if(slotFilled):
 		var preview : TextureRect = TextureRect.new()
 		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		preview.size = iconSlot.size / 2.0
-		preview.pivot_offset = iconSlot.size / 2.0
-		preview.rotation = 2.0
+		preview.size = iconSlot.size / 1.0
+		preview.pivot_offset = iconSlot.size / 4.0
 		preview.texture = iconSlot.texture
 		set_drag_preview(preview)
 		
@@ -46,13 +43,9 @@ func _get_drag_data(at_position: Vector2)->Variant:
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data["Type"] == "Item"
-#func _drop_data(at_position: Vector2, data: Variant) -> void:
-	#OnItemDropped.emit(data["ID"], slotID)
 
 func _drop_data (at_position: Vector2, data: Variant) -> void:
 	dropItem.emit(data["ID"], slotID)
 
-#func _on_pressed():
-	#print(slotFilled)
-	#.emit(ItemData)
+
 	

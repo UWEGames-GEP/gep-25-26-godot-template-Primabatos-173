@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://imm54l1qlg4g"]
-
-[node name="SphereItem" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
